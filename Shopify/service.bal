@@ -22,7 +22,7 @@ service shopify:OrdersService on webhookListener {
     }
 
     remote function onOrdersCreate(shopify:OrderEvent event) returns error? {
-        // Not Implemented
+        json t = check self.shippingClient->/orders.get();
     }
     remote function onOrdersCancelled(shopify:OrderEvent event) returns error? {
         // Not Implemented
